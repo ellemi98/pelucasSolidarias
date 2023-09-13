@@ -33,7 +33,7 @@ audio:not([controls]) {
   display: none; }
 
 html {
-  background: #fff;
+  background: #f0f0f0; 
   color: #000;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%; }
@@ -211,23 +211,24 @@ table {
  * Global Styles
  */
 body {
-  color: #fff;
+  color: #333; /* Dark gray text */
   font-family: Museo, Raleway, "Open Sans", sans-serif;
   font-size: 18px;
   font-weight: 300;
   line-height: normal;
-  background-image: -webkit-radial-gradient(circle, #39323e, #262029);
-  background-image: radial-gradient(circle, #39323e, #262029);
+  background-image: linear-gradient(to bottom, #3498db, #2ecc71);
   background-size: cover;
   background-atachment: fixed; }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
-  margin: 0 0 20px; }
+  margin: 0 0 20px; 
+  color: #3498db; /* Blue heading text color */
+}
 
 hr {
   border: none;
-  border-bottom: 1px solid #777; }
+  border-bottom: 1px solid #3498db; /* Blue horizontal rule */ }
 
 ul, ol {
   margin: 0;
@@ -235,7 +236,7 @@ ul, ol {
 
 a {
   text-decoration: none;
-  color: #61d8ba; }
+  color: #27ae60; /* Green link color */}
 
 address {
   font-style: normal; }
@@ -245,8 +246,9 @@ p {
 
 form input, form textarea, form select {
   outline: none;
-  border: 2px solid #4c4551;
-  background: #262029;
+  border: 2px solid #3498db; /* Blue border for input elements */
+  background: #fff; /* White background for input elements */
+  color: #333; /* Dark gray text for input elements */
   padding: 10px 20px;
   border-radius: 30px; }
 form select {
@@ -296,8 +298,7 @@ form textarea {
  */
 .button, form input[type="submit"], form button, form input[type="reset"] {
   display: inline-block;
-  background-image: -webkit-linear-gradient(#4d4552, #3e3742);
-  background-image: linear-gradient(#4d4552, #3e3742);
+  background-color: #27ae60; /* Green button background */
   padding: 8px 25px;
   border-radius: 20px;
   color: white;
