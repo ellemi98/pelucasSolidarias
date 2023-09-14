@@ -1234,7 +1234,7 @@ form textarea {
       -webkit-transition: .3s ease;
       transition: .3s ease;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
-      background-image: url('images/Imagen3.jpg'); /* Reemplaza 'ruta_de_tu_imagen.jpg' con la ruta de tu imagen */
+      background-image: url('images/R\ \(1\).jpeg'); /* Reemplaza 'ruta_de_tu_imagen.jpg' con la ruta de tu imagen */
       background-size: cover; /* Ajusta el tamaño de la imagen de fondo */
       background-position: center; /* Centra la imagen de fondo */
     }
