@@ -19,14 +19,15 @@
              	
              	if(current_date < target_date ){
 	                // do some time calculations
-	                days = ( parseInt(seconds_left / 86400) < 10 ) ? "0"+ parseInt(seconds_left / 86400) : parseInt(seconds_left / 86400);
-	                seconds_left = seconds_left % 86400;
-	                 
-	                hours = (parseInt(seconds_left / 3600) < 10)? "0"+ parseInt(seconds_left / 86400) : parseInt(seconds_left / 86400);
-	                seconds_left = seconds_left % 3600;
-	                 
-	                minutes = (parseInt(seconds_left / 60)<10)?"0"+parseInt(seconds_left / 60):parseInt(seconds_left / 60);
-	                seconds = (parseInt(seconds_left % 60)<10)?"0"+parseInt(seconds_left % 60):parseInt(seconds_left % 60);
+					days = (parseInt(seconds_left / 86400) < 10) ? "0" + parseInt(seconds_left / 86400) : parseInt(seconds_left / 86400);
+					seconds_left = seconds_left % 86400;
+					
+					hours = (parseInt(seconds_left / 3600) < 10) ? "0" + parseInt(seconds_left / 3600) : parseInt(seconds_left / 3600);
+					seconds_left = seconds_left % 3600;
+					
+					minutes = (parseInt(seconds_left / 60) < 10) ? "0" + parseInt(seconds_left / 60) : parseInt(seconds_left / 60);
+					seconds = (parseInt(seconds_left % 60) < 10) ? "0" + parseInt(seconds_left % 60) : parseInt(seconds_left % 60);
+					
 	            }else{
 	            	days = '00';
 					hours = '00';
