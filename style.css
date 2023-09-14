@@ -333,6 +333,28 @@ form textarea {
     display: block;
     overflow: hidden;
     height: 0; }
+    @media (max-width: 600px) {
+      /* Cambia la dirección de flexbox a columna y centra verticalmente los elementos solo en dispositivos móviles */
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+        padding: 20px 0;
+      }
+    
+      /* Estilos específicos para los botones dentro del .container en dispositivos móviles */
+      .site-header a.button,
+      .site-header .logo {
+        margin: 10px 0; /* Añade margen entre los botones y el texto */
+        text-align: center; /* Centra horizontalmente el texto */
+        font-size: 24px;
+        overflow: hidden;
+      }
+    }
+    @media (min-width: 700px) {
+      .container {
+        width: 500px; } }
   @media (min-width: 768px) {
     .container {
       width: 750px; } }
@@ -1180,41 +1202,7 @@ form textarea {
       white-space: nowrap;
       padding: 50px 0; } }
 
-/*.logo {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  text-align: center;
-  display: inline-block;
-  background-color: #4d4552;
-  background-image: -webkit-linear-gradient(#4d4552, #3e3742);
-  background-image: linear-gradient(#4d4552, #3e3742);
-  
-  padding-top: 60px;
-  margin: 0 20px;
-  font-family: "Deftone Stylus", Georgia, serif;
-  font-weight: normal;
-  font-size: 48px;
-  font-size: 2.6666666667em;
-  -webkit-transition: .3s ease;
-          transition: .3s ease;
-  text-indent: -10px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-   } */
-   /*
-  @media screen and (max-width: 600px) {
-    .logo {
-      width: 130px;
-      height: 130px;
-      margin: 0 10px;
-      padding-top: 40px;
-      font-size: 40px;
-      font-size: 2.2222222222em; } }
-  .logo:hover {
-    box-shadow: inset 0 0 0 100px #61d8ba; }
-  .logo a {
-    display: block;
-    color: white; } */
+
 
     .logo {
       text-indent: -10px;
