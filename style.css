@@ -1228,7 +1228,7 @@ form textarea {
       font-family: "Deftone Stylus", Georgia, serif;
       font-weight: normal;
       font-size: 38px;
-      font-size: 1.899999em;
+      font-size: 2.3em;
       text-align: center;
       padding-top: 60px;
       -webkit-transition: .3s ease;
@@ -1452,3 +1452,30 @@ form textarea {
 
 .colophon {
   color: #7d7482; }
+
+/* Estilos del slider */
+.swiper {
+  width: 100%;
+  height: 400px; /* Altura deseada del slider */
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos opcionales para la paginación */
+.swiper-pagination {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.img {
+  width: 100%; /* Establece el ancho de la imagen al 100% del contenedor */
+  height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción original de la imagen */
+  border-radius: 10%;
+}

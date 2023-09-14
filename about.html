@@ -6,12 +6,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
 		
 		<title>Creativo</title>
-
+		<link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
 		<!-- Loading third party fonts -->
 		<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 		<!-- Loading main css file -->
 		<link rel="stylesheet" href="style.css">
+
+	
+
 		
 		<!--[if lt IE 9]>
 		<script src="js/ie-support/html5.js"></script>
@@ -27,24 +31,44 @@
 			
 			<header class="site-header">
 				<div class="container shrinked">
-					<a href="about.html" class="button">About Us</a>
-					<h1 class="logo"><a href="index.html">Creativo</a></h1>
-					<a href="contact.html" class="button">Contact</a>
+					<a href="about.html" class="button">Sobre nosotros</a>
+					<h1 class="logo"><a href="index.html">Peluca Solidaria</a></h1>
+					<a href="contact.html" class="button">Contáctenos</a>
 				</div>	<!-- .container -->
 			</header> <!-- .site-header -->
 
 			<main class="main-content">
 				<div class="container shrinked">
-					<h1 class="section-title">Who we <span>really are?</span></h1>
-
-					<div class="entry-content">
-						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p> 
-
-						<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.</p>
+					<h1 class="section-title">¿Quiénes <span>somos?</span></h1>
+					<div class="swiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<img src="images/OIP (2).jpeg" alt="Imagen 1">
+							</div>
+							<div class="swiper-slide">
+								<img src="images/OIP (3).jpeg" alt="Imagen 2">
+							</div>
+							
+				
+						</div>
+						<div class="swiper-pagination"></div>
+						 <!-- If we need navigation buttons -->
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
 					</div>
-
+					<div class="entry-content">
+						<p>Somos Peluca Solidaria, una organización con un corazón solidario que se enfoca en brindar apoyo a pacientes oncológicos que enfrentan dificultades para adquirir una peluca durante su tratamiento.</p>
+			
+						<p>Nuestra misión es simple pero poderosa: recolectamos cabello donado por personas generosas de nuestra comunidad, ya sea natural o artificial, y lo transformamos en pelucas de alta calidad. Estas pelucas no solo son una solución práctica, sino que también son una forma de ayudar a mejorar la autoestima y la confianza de los pacientes en este momento desafiante de sus vidas.</p>
+			
+						<p>Contamos con un equipo de profesionales altamente capacitados en la fabricación y entrega de pelucas, lo que garantiza que cada una de ellas cumpla con los más altos estándares de calidad.</p>
+			
+						<p>Además, brindamos la oportunidad de contribuir y apadrinar a nuestros clientes a través de medios digitales, para que juntos podamos seguir extendiendo una mano amiga a quienes más lo necesitan.</p>
+					</div>
 					<div class="team-section row">
-						<div class="team">
+
+						<img class="img" src="images/soluciones-capilares-oncologicas-pelosystems.jpg" alt="Descripción de la imagen">
+						<!-- <div class="team">
 							<img src="dummy/team-1.jpg" alt="Martin Lorenz" class="team-image">
 							<h2 class="team-name">Martin Lorenz</h2>
 						</div>
@@ -59,7 +83,7 @@
 						<div class="team">
 							<img src="dummy/team-4.jpg" alt="Sarah Stone" class="team-image">
 							<h2 class="team-name">Sarah Stone</h2>
-						</div>
+						</div> -->
 					</div>
 
 				</div>	<!-- .container -->
@@ -75,7 +99,7 @@
 						<a href="#"><i class="fa fa-pinterest"></i></a>
 					</div> <!-- .social-links -->
 
-					<div class="colophon">Copyright 2014 Creativo. All right reserved</div>
+					<div class="colophon">Copyright 2023 - Proyecto Solidario. UEES</div>
 
 				</div>	<!-- .container -->
 			</footer> <!-- .site-footer -->
@@ -85,7 +109,23 @@
 		<script src="js/jquery-1.11.1.min.js"></script>
 		<script src="js/plugins.js"></script>
 		<script src="js/app.js"></script>
-		
+		<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+		<script>
+	
+			$(document).ready(function(){
+			// Inicializa el slider de Swiper
+				const swiper = new Swiper('.swiper', {
+					// Optional parameters
+					direction: 'vertical',
+					loop: true,
+					  // Navigation arrows
+					navigation: {
+						nextEl: '.swiper-button-next',
+						prevEl: '.swiper-button-prev',
+					},
+				});
+		});
+		</script>
 	</body>
 
 </html>

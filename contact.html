@@ -27,46 +27,49 @@
 			
 			<header class="site-header">
 				<div class="container shrinked">
-					<a href="about.html" class="button">About Us</a>
-					<h1 class="logo"><a href="index.html">Creativo</a></h1>
-					<a href="contact.html" class="button">Contact</a>
+					<a href="about.html" class="button">Sobre nosotros</a>
+					<h1 class="logo"><a href="index.html">Peluca Solidaria</a></h1>
+					<a href="contact.html" class="button">Contáctenos</a>
 				</div>	<!-- .container -->
 			</header> <!-- .site-header -->
 
 			<main class="main-content">
 				<div class="container shrinked">
-					<h1 class="section-title">Have questions? <span>Contact us!</span></h1>
+					<h1 class="section-title">¿Tienes una pregunta? <span>¡Contáctenos!</span></h1>
 
 					<div class="entry-content">
-						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p> 
+						<img class="img" src="images/R (1).jpeg" alt="Descripción de la imagen">
+						<p>¿Interesado en donar, necesitas apoyo o tienes sugerencias para nuestro proyecto de pelucas solidarias? ¡Estamos aquí para escucharte y colaborar contigo! Por favor, utiliza la siguiente información de contacto o el formulario de contacto en línea para ponerte en contacto con nosotros.</p>
+    
 					</div>
 
 					<div class="row contact-section">
-						<form action="" class="contact-form">
+						<form class="contact-form" id="contact-form">
 							<div class="col-sm-6">
 								<div class="control">
-									<input type="text" placeholder="Name...">
+									<input type="text" placeholder="Nombre..." name="name" required maxlength="100">
 									<i class="fa fa-user"></i>
 								</div>
 								<div class="control">
-									<input type="text" placeholder="Email...">
+									<input type="email" placeholder="Email..." name="email" required>
 									<i class="fa fa-envelope"></i>
 								</div>
 								<div class="control">
-									<input type="text" placeholder="Website...">
+									<input type="url" placeholder="Website..." name="website" pattern="https?://.+" title="Debe ser una URL válida, por ejemplo, http://www.ejemplo.com">
 									<i class="fa fa-link"></i>
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="control">
-									<textarea placeholder="Message..."></textarea>
+									<textarea placeholder="Mensaje..." name="message" required maxlength="500"></textarea>
 									<i class="fa fa-pencil"></i>
 								</div>
 
 								<div class="right-aligned">
-									<input type="submit" value="Send Message">
+									<input type="submit" value="Enviar mensaje">
 								</div>
 							</div>
+							<input type="hidden" name="action" value="doPost">
 						</form>
 					</div>
 
@@ -83,7 +86,7 @@
 						<a href="#"><i class="fa fa-pinterest"></i></a>
 					</div> <!-- .social-links -->
 
-					<div class="colophon">Copyright 2014 Creativo. All right reserved</div>
+					<div class="colophon">Copyright 2023 - Proyecto Solidario. UEES</div>
 
 				</div>	<!-- .container -->
 			</footer> <!-- .site-footer -->
@@ -93,7 +96,35 @@
 		<script src="js/jquery-1.11.1.min.js"></script>
 		<script src="js/plugins.js"></script>
 		<script src="js/app.js"></script>
-		
+	
+
+		<script>
+		(function() {
+		var form = document.getElementById("contact-form");
+		form.addEventListener("submit", function(event) {
+			event.preventDefault();
+			var data = new FormData(form);
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST", "https://script.google.com/macros/s/AKfycbxQFRyf1hEh0p1QaU3_gO7NlyhcD55iljsI7mjwGbFGuBtsb27qRvJ9Mn9AXTPJFZS-/exec");
+
+			xhr.onreadystatechange = function() {
+			if (xhr.readyState === 4) {
+				if (xhr.status === 200) {
+				// Envío exitoso
+				alert("Mensaje enviado con éxito");
+				// Limpia los campos del formulario
+				form.reset();
+				} else {
+				// Error en el envío
+				alert("Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.");
+				}
+			}
+			};
+
+			xhr.send(data);
+		});
+		})();
+		</script>
 	</body>
 
 </html>
