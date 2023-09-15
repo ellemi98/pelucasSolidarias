@@ -1224,7 +1224,7 @@ form textarea {
       -webkit-transition: .3s ease;
       transition: .3s ease;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
-      background-image: url('images/R\ \(1\).jpeg'); /* Reemplaza 'ruta_de_tu_imagen.jpg' con la ruta de tu imagen */
+      background-image: url('images/logo.jpeg'); /* Reemplaza 'ruta_de_tu_imagen.jpg' con la ruta de tu imagen */
       background-size: cover; /* Ajusta el tamaño de la imagen de fondo */
       background-position: center; /* Centra la imagen de fondo */
     }
@@ -1468,4 +1468,13 @@ form textarea {
   width: 100%; /* Establece el ancho de la imagen al 100% del contenedor */
   height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción original de la imagen */
   border-radius: 10%;
+}
+.telefono {
+  max-width: 100%;
+}
+
+.iti {
+  /* Estilos para el segundo div */
+  width: 100%; /* Hace que el segundo div ocupe todo el ancho del padre (primer div) */
+  height: 100%; /* Hace que el segundo div ocupe todo el alto del padre (primer div) */
 }

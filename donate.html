@@ -10,10 +10,11 @@
 		<!-- Loading third party fonts -->
 		<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 	
-
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
 
 		<!-- Loading main css file -->
 		<link rel="stylesheet" href="style.css">
+
 		
 		<!--[if lt IE 9]>
 		<script src="js/ie-support/html5.js"></script>
@@ -37,11 +38,11 @@
 
 			<main class="main-content">
 				<div class="container shrinked">
-					<h1 class="section-title">¿Tienes una pregunta? <span>¡Contáctenos!</span></h1>
+					<h1 class="section-title">¡Apoya a <span>Pelucas Solidaria  !</span></h1>
 
 					<div class="entry-content">
-						<img class="img" src="images/manoconlazo.jpg" alt="Descripción de la imagen">
-						<p>¿Interesado en donar, necesitas apoyo o tienes sugerencias para nuestro proyecto de pelucas solidarias? ¡Estamos aquí para escucharte y colaborar contigo! Por favor, utiliza la siguiente información de contacto o el formulario de contacto en línea para ponerte en contacto con nosotros.</p>
+						<img class="img" src="images/lazoaxul.webp" alt="Descripción de la imagen">
+						<p>¿Te gustaría contribuir al proyecto Pelucas Solidarias para personas con cáncer? Tu donación es invaluable para nosotros y marca la diferencia. ¡Estamos aquí para escucharte y colaborar contigo! Por favor, utiliza la siguiente información de contacto o el formulario en línea para ponerte en contacto con nosotros y obtener más detalles sobre cómo donar y apoyar esta noble causa.</p>
     
 					</div>
 
@@ -56,17 +57,18 @@
 									<input type="email" placeholder="Email..." name="email" required>
 									<i class="fa fa-envelope"></i>
 								</div>
+								
 								<div class="control">
-									<input type="url" placeholder="Website..." name="website" pattern="https?://.+" title="Debe ser una URL válida, por ejemplo, http://www.ejemplo.com">
-									<i class="fa fa-link"></i>
+									<input type="tel" placeholder="Celular..."   name="celular" id="telefono"  pattern="[0-9]*" title="Ingrese un numero de celular válido">
+									
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="control">
-									<textarea placeholder="Mensaje..." name="mensaje" required maxlength="500"></textarea>
-									<i class="fa fa-pencil"></i>
+									<input type="number" placeholder="$..." name="donacion"  required max="100000000000" min="1"  >
+									<i class="fa fa-money"></i>
 								</div>
-
+								<input type="hidden" name="codigo_pais" id="codigo_pais">
 								<div class="right-aligned">
 									<input type="submit" value="Enviar mensaje">
 								</div>
@@ -99,15 +101,22 @@
 		<script src="js/plugins.js"></script>
 		<script src="js/app.js"></script>
 	
-
+		<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
 		<script>
+		
 		(function() {
 		var form = document.getElementById("contact-form");
+		var iti; //
 		form.addEventListener("submit", function(event) {
 			event.preventDefault();
+
+			var selectedCountryData = iti.getSelectedCountryData();
+			var codigoPais = selectedCountryData.dialCode;
+			document.querySelector("#codigo_pais").value = codigoPais;
+
 			var data = new FormData(form);
 			var xhr = new XMLHttpRequest();
-			xhr.open("POST", "https://script.google.com/macros/s/AKfycbycxp7WPf7QMg9EQ_NPgW06UA1d5Rp3IIvbaBdSu78CRV-fqX7gHIwLE_39ZeaM6hsp/exec?formulario=1");
+			xhr.open("POST", "https://script.google.com/macros/s/AKfycbycxp7WPf7QMg9EQ_NPgW06UA1d5Rp3IIvbaBdSu78CRV-fqX7gHIwLE_39ZeaM6hsp/exec?formulario=2");
 
 			xhr.onreadystatechange = function() {
 			if (xhr.readyState === 4) {
@@ -125,8 +134,34 @@
 
 			xhr.send(data);
 		});
-		})();
-		</script>
+		
+
+
+document.getElementById("telefono").addEventListener("keypress", function (e) {
+    // Obtenemos el código de la tecla pulsada
+    var key = e.keyCode || e.which;
+
+    // Verificamos si la tecla pulsada es un número (0-9) o la tecla Backspace (8)
+    if (!(key >= 48 && key <= 57) && key != 8) {
+        e.preventDefault(); // Bloquear la entrada de letras
+    }
+});
+  const input = document.querySelector("#telefono");
+  iti = window.intlTelInput(input, {
+  initialCountry: "auto",
+  geoIpLookup: callback => {
+    fetch("https://ipapi.co/json")
+      .then(res => res.json())
+      .then(data => callback(data.country_code))
+      .catch(() => callback("us"));
+  },
+  
+  autoPlaceholder: "aggressive", 
+  });
+
+ 
+})();
+</script>
 	</body>
 
 </html>
